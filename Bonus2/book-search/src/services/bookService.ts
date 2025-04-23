@@ -6,7 +6,7 @@ const API_BASE_URL = 'https://www.googleapis.com/books/v1/volumes';
 export const searchBooks = async (query: string): Promise<BookSearchResponse> => {
   try {
     const response = await axios.get(`${API_BASE_URL}?q=${encodeURIComponent(query)}&maxResults=20`);
-    return response.data;
+    return response.data as BookSearchResponse;
   } catch (error) {
     console.error('Error searching books:', error);
     throw error;

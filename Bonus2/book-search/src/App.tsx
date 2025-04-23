@@ -30,7 +30,7 @@ function App() {
     setLoading(true);
     try {
       const book = await getBookDetails(bookId);
-      setSelectedBook(book);
+      setSelectedBook(book as Book);
     } catch (err) {
       setError('Failed to fetch book details. Please try again.');
       console.error(err);
